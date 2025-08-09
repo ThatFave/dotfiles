@@ -1,0 +1,9 @@
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+export PATH="$PATH:$HOME/.local/bin:$HOME/.atuin/bin:$HOME/.local/share/bob/nightly/bin"
+eval "$(atuin init bash --disable-up-arrow)"
+eval "$(mise activate bash)"
+
+export EDITOR='/home/michael/.local/share/bob/nightly/bin/nvim'
+
+alias vi=nvim
+alias gish='ssh -p 23231 docker.wild-fahrenheit.ts.net'
