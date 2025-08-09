@@ -3,7 +3,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/.atuin/bin:$HOME/.local/share/bob/nigh
 eval "$(atuin init bash --disable-up-arrow)"
 eval "$(mise activate bash)"
 
-export EDITOR='/home/michael/.local/share/bob/nightly/bin/nvim'
+export EDITOR=nvim
 
 alias vi=nvim
 alias gish='ssh -p 23231 docker.wild-fahrenheit.ts.net'
