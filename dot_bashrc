@@ -12,3 +12,7 @@ export EDITOR=nvim
 
 alias vi=nvim
 alias gish='ssh -p 23231 docker.wild-fahrenheit.ts.net'
+alias ll='eza -abghHliS@Um --git --octal-permissions'
+alias la='eza -abghlH'
+alias l='eza -F'
+alias ls='eza -a'
