@@ -1,0 +1,5 @@
+[user]
+	email = {{ .email | quote }}
+	name = Michael Hesemann
+[init]
+	defaultBranch = main
