@@ -1,5 +1,10 @@
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 export PATH="$PATH:$HOME/.local/bin:$HOME/.atuin/bin:$HOME/.local/share/bob/nightly/bin"
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+
 eval "$(atuin init bash --disable-up-arrow)"
 eval "$(mise activate bash)"
 
