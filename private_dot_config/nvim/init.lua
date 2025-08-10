@@ -15,6 +15,7 @@ opt.undofile = true
 opt.incsearch = true
 opt.signcolumn = 'yes'
 opt.mouse = 'a'
+opt.clipboard = 'unnamedplus'
 opt.colorcolumn = '80'
 opt.fillchars = { eob = ' ' }
 opt.statusline = ' '
