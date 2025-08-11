@@ -38,7 +38,7 @@ vim.pack.add({
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
   { src = 'https://github.com/nvim-tree/nvim-tree.lua' },
   { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
-	{ src = 'https://github.com/romgrk/barbar.nvim' },
+  { src = 'https://github.com/romgrk/barbar.nvim' },
   { src = 'https://github.com/mbbill/undotree' },
 })
 
@@ -62,6 +62,7 @@ map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 map('n', '<leader>cc', ':colorscheme wildcharm<CR>')
 map('n', '<Tab>', ':bnext<CR>')
+map('i', '<Tab>', '  ')
 map('n', '<S-Tab>', ':bprevious<CR>')
 map('i', '<S-Tab>', '<BS>')
 map('n', '<leader>w', ':BufferClose<CR>')
