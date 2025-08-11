@@ -57,7 +57,7 @@ vim.defer_fn(function()
     renderer = { group_empty = true },
   })
 
-	require('barbar.nvim').setup()
+	require('barbar').setup()
 	require('mini.clue').setup()
 	require('mini.starter').setup()
 end, 50)
