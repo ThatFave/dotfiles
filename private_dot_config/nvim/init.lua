@@ -36,12 +36,12 @@ g.mapleader = ' '
 
 vim.pack.add({
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
-  { src = 'https://github.com/folke/which-key.nvim' },
   { src = 'https://github.com/nvim-tree/nvim-tree.lua' },
   { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
-  { src = 'https://github.com/echasnovski/mini.bufremove' },
-  { src = 'https://github.com/akinsho/bufferline.nvim' },
+	{ src = 'https://github.com/romgrk/barbar.nvim' },
   { src = 'https://github.com/mbbill/undotree' },
+	{ src = 'https://github.com/echasnovski/mini.clue' },
+	{ src = 'https://github.com/echasnovski/mini.starter' },
 })
 
 vim.defer_fn(function()
@@ -57,21 +57,10 @@ vim.defer_fn(function()
     renderer = { group_empty = true },
   })
 
-  require('bufferline').setup({
-    options = {
-      indicator = { style = 'underline' },
-    }
-  })
+	require('barbar.nvim').setup()
+	require('mini.clue').setup()
+	require('mini.starter').setup()
 end, 50)
-
-local function close_current_buffer()
-  vim.cmd('bprev')
-  local bufs = vim.fn.getbufinfo({ buflisted = 1 })
-  local last_buf = bufs[#bufs].bufnr
-  if last_buf ~= vim.api.nvim_get_current_buf() then
-    vim.cmd('bdelete ' .. last_buf)
-  end
-end
 
 map('n', '<leader>o', ':update<CR>:source<CR>')
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
@@ -83,7 +72,7 @@ map('n', '<leader>cc', ':colorscheme wildcharm<CR>')
 map('n', '<Tab>', ':bnext<CR>')
 map('n', '<S-Tab>', ':bprevious<CR>')
 map('i', '<S-Tab>', '<BS>')
-map('n', '<leader>w', close_current_buffer)
+map('n', '<leader>w', ':BufferClose')
 map('n', '<space>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
