@@ -47,7 +47,7 @@ require('nvim-treesitter.configs').setup({
   highlight = { enable = true }
 })
 require('nvim-tree').setup({
-  actions = { open_file = { quit_on_open = false } },
+  actions = { open_file = { quit_on_open = true } },
   disable_netrw = true,
   update_focused_file = { enable = true },
   renderer = { group_empty = true },
