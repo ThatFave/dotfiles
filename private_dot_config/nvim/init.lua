@@ -40,7 +40,6 @@ vim.pack.add({
   { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
 	{ src = 'https://github.com/romgrk/barbar.nvim' },
   { src = 'https://github.com/mbbill/undotree' },
-	{ src = 'https://github.com/echasnovski/mini.clue' },
 })
 
 require('nvim-treesitter.configs').setup({
@@ -54,7 +53,6 @@ require('nvim-tree').setup({
   renderer = { group_empty = true },
 })
 require('barbar').setup()
-require('mini.clue').setup()
 
 map('n', '<leader>o', ':update<CR>:source<CR>')
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
