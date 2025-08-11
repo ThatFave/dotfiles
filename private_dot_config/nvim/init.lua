@@ -41,26 +41,20 @@ vim.pack.add({
 	{ src = 'https://github.com/romgrk/barbar.nvim' },
   { src = 'https://github.com/mbbill/undotree' },
 	{ src = 'https://github.com/echasnovski/mini.clue' },
-	{ src = 'https://github.com/echasnovski/mini.starter' },
 })
 
-vim.defer_fn(function()
-  require('nvim-treesitter.configs').setup({
-    auto_install = true,
-    highlight = { enable = true }
-  })
-
-  require('nvim-tree').setup({
-    actions = { open_file = { quit_on_open = true } },
-    disable_netrw = true,
-    update_focused_file = { enable = true },
-    renderer = { group_empty = true },
-  })
-
-	require('barbar').setup()
-	require('mini.clue').setup()
-	require('mini.starter').setup()
-end, 50)
+require('nvim-treesitter.configs').setup({
+  auto_install = true,
+  highlight = { enable = true }
+})
+require('nvim-tree').setup({
+  actions = { open_file = { quit_on_open = true } },
+  disable_netrw = true,
+  update_focused_file = { enable = true },
+  renderer = { group_empty = true },
+})
+require('barbar').setup()
+require('mini.clue').setup()
 
 map('n', '<leader>o', ':update<CR>:source<CR>')
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
