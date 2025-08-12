@@ -24,7 +24,7 @@ opt.cursorlineopt = "screenline"
 opt.scrolloff = 3
 opt.ignorecase = true
 opt.smartcase = true
-opt.hlsearch = false
+opt.hlsearch = true
 
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
