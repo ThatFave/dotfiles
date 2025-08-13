@@ -1,3 +1,8 @@
 [user]
 	email = {{ .email | quote }}
 	name = "Michael Hesemann"
+
+[signing]
+behavior = 'own'
+backend = 'ssh'
+key = {{ .sshkey | quote }}
