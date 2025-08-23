@@ -14,7 +14,7 @@ export GOPATH="$XDG_DATA_HOME"/go
 eval "$(atuin init bash --disable-up-arrow)"
 eval "$(mise activate bash)"
 eval "$(jj util completion bash)"
-
+. "$HOME/.cargo/env"
 
 export EDITOR=nvim
 
