@@ -62,7 +62,8 @@ require('nvim-tree').setup({
 require('barbar').setup()
 require('mini.completion').setup()
 require('mini.icons').setup()
-require('mini.clue').setup({
+local miniclue = require('mini.clue')
+miniclue.setup({
   triggers = {
     -- Leader triggers
     { mode = 'n', keys = '<Leader>' },
