@@ -64,7 +64,11 @@ require('mini.icons').setup()
 require('mini.snippets').setup()
 MiniIcons.tweak_lsp_kind()
 
-lsp.enable('elixir-ls')
+lsp.config('elixirls', {
+  cmd = { '/usr/bin/elixir-ls' };
+})
+
+lsp.enable('elixirls')
 
 map('n', '<leader>o', ':update<CR>:source<CR>')
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
