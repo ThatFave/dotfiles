@@ -25,3 +25,5 @@ alias ll='eza -abghHliS@Um --git --octal-permissions'
 alias la='eza -abghlH'
 alias l='eza -F'
 alias ls='eza -a'
+
+alias clippy='cargo clippy --fix -- -W clippy::pedantic -W clippy::nusery -W clippy::unwrap_used -W clippy::expect_used'
