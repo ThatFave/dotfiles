@@ -98,6 +98,17 @@ miniclue.setup({
 
   clues = {
     -- Enhance this by adding descriptions for <Leader> mapping groups
+		{ mode = 'n', keys = '<leader>cc', desc = 'change colorscheme' },
+		{ mode = 'n', keys = '<leader>d', desc = 'diagnostic' },
+		{ mode = 'n', keys = '<leader>e', desc = 'open filetree' },
+		{ mode = 'n', keys = '<leader>f', desc = 'format code with lsp' },
+		{ mode = 'n', keys = '<leader>l', desc = 'lint jsonnet code' },
+		{ mode = 'n', keys = '<leader>o', desc = 'nvim source current file' },
+		{ mode = 'n', keys = '<leader>s', desc = 'fast replace under cursor' },
+		{ mode = 'n', keys = '<leader>u', desc = 'open undotree' },
+		{ mode = 'n', keys = '<leader>w', desc = 'close buffer' },
+		{ mode = 'n', keys = '<leader>x', desc = 'make current file +x' },
+		{ mode = 'n', keys = '<leader>y', desc = 'yank filename into +' },
     miniclue.gen_clues.builtin_completion(),
     miniclue.gen_clues.g(),
     miniclue.gen_clues.marks(),
@@ -116,22 +127,21 @@ lsp.config('elixirls', {
 
 lsp.enable('elixirls', 'rust_analyzer')
 
-map('n', '<leader>d', vim.diagnostic.open_float, { noremap = true, silent = true })
-map('n', '<leader>o', ':update<CR>:source<CR>')
-map('n', '<leader>e', ':NvimTreeToggle<CR>')
-map('n', '<leader>f', ':NvimTreeFocus<CR>')
-map('n', '<leader>u', ':UndotreeToggle<CR>')
-map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 map('n', '<leader>cc', ':colorscheme wildcharm<CR>')
-map('n', '<leader>tf', vim.lsp.buf.format, { noremap = true, silent = true })
-map('n', '<leader>tl', ':!tk lint %<CR>')
+map('n', '<leader>d', vim.diagnostic.open_float, { noremap = true, silent = true })
+map('n', '<leader>e', ':NvimTreeToggle<CR>')
+map('n', '<leader>f', vim.lsp.buf.format, { noremap = true, silent = true })
+map('n', '<leader>l', ':!tk lint %<CR>')
+map('n', '<leader>o', ':update<CR>:source<CR>')
+map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map('n', '<leader>u', ':UndotreeToggle<CR>')
+map('n', '<leader>w', ':BufferClose<CR>')
+map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
+map('n', '<leader>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
 map('n', '<Tab>', ':bnext<CR>')
 map('i', '<Tab>', '  ')
 map('n', '<S-Tab>', ':bprevious<CR>')
 map('i', '<S-Tab>', '<BS>')
-map('n', '<leader>w', ':BufferClose<CR>')
-map('n', '<space>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
 
