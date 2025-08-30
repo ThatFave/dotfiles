@@ -107,6 +107,7 @@ miniclue.setup({
   },
 })
 require('mason').setup()
+require'lspconfig'.rust_analyzer.setup({})
 MiniIcons.tweak_lsp_kind()
 
 lsp.config('elixirls', {
