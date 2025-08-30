@@ -57,9 +57,9 @@ require('nvim-tree').setup({
   renderer = { group_empty = true },
 })
 require('barbar').setup()
-requite('mini.completion').setup()
-requite('mini.icons').setup()
-requite('mini.snippets').setup()
+require('mini.completion').setup()
+require('mini.icons').setup()
+require('mini.snippets').setup()
 MiniIcons.tweak_lsp_kind()
 
 map('n', '<leader>o', ':update<CR>:source<CR>')
