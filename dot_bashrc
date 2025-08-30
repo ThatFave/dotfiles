@@ -11,7 +11,7 @@ export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export GOPATH="$XDG_DATA_HOME"/go
 
-export LC_ALL=en_US.UTF-8
+export LC_ALL="en_US.UTF-8"
 
 
 eval "$(atuin init bash --disable-up-arrow)"
