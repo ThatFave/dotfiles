@@ -116,6 +116,7 @@ lsp.config('elixirls', {
 
 lsp.enable('elixirls', 'rust_analyzer')
 
+map('n', '<leader>d', vim.diagnostic.open_float, { noremap = true, silent = true })
 map('n', '<leader>o', ':update<CR>:source<CR>')
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
 map('n', '<leader>f', ':NvimTreeFocus<CR>')
@@ -133,7 +134,6 @@ map('n', '<leader>w', ':BufferClose<CR>')
 map('n', '<space>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
-map('n', 'grd', vim.diagnostic.open_float, { noremap = true, silent = true })
 
 cmd('colorscheme lunaperche')
 cmd('hi statusline guibg=NONE')
