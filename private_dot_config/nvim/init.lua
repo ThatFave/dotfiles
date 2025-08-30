@@ -25,6 +25,8 @@ opt.scrolloff = 3
 opt.ignorecase = true
 opt.smartcase = true
 opt.hlsearch = true
+opt.completeopt = 'menuone,noselect,popup,fuzzy'
+opt.complete = '.,w,b,u,o'
 
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
