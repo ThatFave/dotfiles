@@ -44,8 +44,8 @@ vim.pack.add({
   { src = 'https://github.com/mbbill/undotree' },
   { src = 'https://github.com/nvim-mini/mini.completion' },
   { src = 'https://github.com/nvim-mini/mini.icons' },
-  { src = 'https://github.com/nvim-mini/mini.snippets' },
   { src = 'https://github.com/neovim/nvim-lspconfig' },
+  { src = 'https://github.com/mason-org/mason.nvim' },
 })
 
 require('nvim-treesitter.configs').setup({
@@ -61,7 +61,7 @@ require('nvim-tree').setup({
 require('barbar').setup()
 require('mini.completion').setup()
 require('mini.icons').setup()
-require('mini.snippets').setup()
+require('mason').setup()
 MiniIcons.tweak_lsp_kind()
 
 lsp.config('elixirls', {
