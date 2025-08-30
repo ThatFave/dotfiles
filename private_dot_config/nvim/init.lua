@@ -2,6 +2,7 @@ local opt = vim.opt
 local map = vim.keymap.set
 local g = vim.g
 local cmd = vim.cmd
+local lsp = vim.lsp
 
 opt.tabstop = 2
 opt.shiftwidth = 2
@@ -44,6 +45,7 @@ vim.pack.add({
   { src = 'https://github.com/nvim-mini/mini.completion' },
   { src = 'https://github.com/nvim-mini/mini.icons' },
   { src = 'https://github.com/nvim-mini/mini.snippets' },
+  { src = 'https://github.com/neovim/nvim-lspconfig' },
 })
 
 require('nvim-treesitter.configs').setup({
@@ -61,6 +63,8 @@ require('mini.completion').setup()
 require('mini.icons').setup()
 require('mini.snippets').setup()
 MiniIcons.tweak_lsp_kind()
+
+lsp.enable('elixir-ls')
 
 map('n', '<leader>o', ':update<CR>:source<CR>')
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
