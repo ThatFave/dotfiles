@@ -113,7 +113,7 @@ lsp.config('elixirls', {
   cmd = { '/usr/bin/elixir-ls' };
 })
 
-lsp.enable('elixirls')
+lsp.enable('elixirls', 'rust-analyser')
 
 map('n', '<leader>o', ':update<CR>:source<CR>')
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
