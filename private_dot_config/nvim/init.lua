@@ -44,6 +44,7 @@ vim.pack.add({
   { src = 'https://github.com/mbbill/undotree' },
   { src = 'https://github.com/nvim-mini/mini.completion' },
   { src = 'https://github.com/nvim-mini/mini.icons' },
+  { src = 'https://github.com/nvim-mini/mini.clue' },
   { src = 'https://github.com/neovim/nvim-lspconfig' },
   { src = 'https://github.com/mason-org/mason.nvim' },
 })
@@ -61,6 +62,7 @@ require('nvim-tree').setup({
 require('barbar').setup()
 require('mini.completion').setup()
 require('mini.icons').setup()
+require('mini.clue').setup()
 require('mason').setup()
 MiniIcons.tweak_lsp_kind()
 
