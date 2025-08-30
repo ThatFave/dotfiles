@@ -41,6 +41,9 @@ vim.pack.add({
   { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
   { src = 'https://github.com/romgrk/barbar.nvim' },
   { src = 'https://github.com/mbbill/undotree' },
+  { src = 'https://github.com/nvim-mini/mini.completion' },
+  { src = 'https://github.com/nvim-mini/mini.icons' },
+  { src = 'https://github.com/nvim-mini/mini.snippets' },
 })
 
 require('nvim-treesitter.configs').setup({
@@ -54,6 +57,10 @@ require('nvim-tree').setup({
   renderer = { group_empty = true },
 })
 require('barbar').setup()
+requite('mini.completion').setup()
+requite('mini.icons').setup()
+requite('mini.snippets').setup()
+MiniIcons.tweak_lsp_kind()
 
 map('n', '<leader>o', ':update<CR>:source<CR>')
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
