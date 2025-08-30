@@ -133,6 +133,7 @@ map('n', '<leader>w', ':BufferClose<CR>')
 map('n', '<space>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
+map('n', 'grd', vim.diagnostic.open_float())
 
 cmd('colorscheme lunaperche')
 cmd('hi statusline guibg=NONE')
