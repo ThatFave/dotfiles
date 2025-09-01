@@ -27,4 +27,4 @@ alias l='eza -F'
 alias ls='eza -a'
 
 alias clippy='cargo clippy --fix --allow-dirty -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
-alisa tmux='zellij'
+alias tmux='zellij'
