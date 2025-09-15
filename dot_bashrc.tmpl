@@ -22,6 +22,7 @@ eval "$(jj util completion bash)"
 
 {{ if eq .chezmoi.fqdnHostname "desktop-michael" }}
 export SSH_AUTH_SOCK=/home/michael/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+eval "$(mise activate bash)"
 {{ end }}
 
 alias vi=nvim
