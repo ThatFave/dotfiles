@@ -35,7 +35,7 @@ g.undotree_WindowLayout = 3
 g.undotree_SetFocusWhenToggle = 1
 g.undotree_SplitWidth = 45
 g.mapleader = ' '
--- g.clipboard = 'osc52'
+g.clipboard = 'osc52'
 
 vim.pack.add({
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
