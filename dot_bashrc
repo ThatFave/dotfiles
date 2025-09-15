@@ -28,6 +28,7 @@ alias l='eza -F'
 alias ls='eza -a'
 alias fastfetch='fastfetch --config examples/7.jsonc'
 alias cat='bat'
+alias grep='rg'
 
 alias clippy='cargo clippy --fix --allow-dirty -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
 alias tmux='zellij'
