@@ -63,7 +63,7 @@ require('mini.completion').setup()
 require('mini.icons').setup()
 require('mason').setup()
 require'lspconfig'.rust_analyzer.setup({})
-require'lspconfig'.jsonnet_ls.setup()
+require'lspconfig'.jsonnet_ls.setup({})
 MiniIcons.tweak_lsp_kind()
 
 lsp.config('elixirls', {
