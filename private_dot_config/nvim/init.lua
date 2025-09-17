@@ -44,7 +44,6 @@ vim.pack.add({
   { src = 'https://github.com/mbbill/undotree' },
   { src = 'https://github.com/nvim-mini/mini.completion' },
   { src = 'https://github.com/nvim-mini/mini.icons' },
-  { src = 'https://github.com/nvim-mini/mini.clue' },
   { src = 'https://github.com/neovim/nvim-lspconfig' },
   { src = 'https://github.com/mason-org/mason.nvim' },
 })
@@ -62,57 +61,16 @@ require('nvim-tree').setup({
 require('barbar').setup()
 require('mini.completion').setup()
 require('mini.icons').setup()
-local miniclue = require('mini.clue')
-miniclue.setup({
-  triggers = {
-    { mode = 'n', keys = '<Leader>' },
-    { mode = 'x', keys = '<Leader>' },
-    { mode = 'i', keys = '<C-x>' },
-    { mode = 'n', keys = 'g' },
-    { mode = 'x', keys = 'g' },
-    { mode = 'n', keys = "'" },
-    { mode = 'n', keys = '`' },
-    { mode = 'x', keys = "'" },
-    { mode = 'x', keys = '`' },
-    { mode = 'n', keys = '"' },
-    { mode = 'x', keys = '"' },
-    { mode = 'i', keys = '<C-r>' },
-    { mode = 'c', keys = '<C-r>' },
-    { mode = 'n', keys = '<C-w>' },
-    { mode = 'n', keys = 'z' },
-    { mode = 'x', keys = 'z' },
-  },
-
-  clues = {
-    -- Enhance this by adding descriptions for <Leader> mapping groups
-		{ mode = 'n', keys = '<Leader>cc', desc = 'change colorscheme' },
-		{ mode = 'n', keys = '<Leader>d', desc = 'diagnostic' },
-		{ mode = 'n', keys = '<Leader>e', desc = 'open filetree' },
-		{ mode = 'n', keys = '<Leader>f', desc = 'format code with lsp' },
-		{ mode = 'n', keys = '<Leader>l', desc = 'lint jsonnet code' },
-		{ mode = 'n', keys = '<Leader>o', desc = 'nvim source current file' },
-		{ mode = 'n', keys = '<Leader>s', desc = 'fast replace under cursor' },
-		{ mode = 'n', keys = '<Leader>u', desc = 'open undotree' },
-		{ mode = 'n', keys = '<Leader>w', desc = 'close buffer' },
-		{ mode = 'n', keys = '<Leader>x', desc = 'make current file +x' },
-		{ mode = 'n', keys = '<Leader>y', desc = 'yank filename into +' },
-    miniclue.gen_clues.builtin_completion(),
-    miniclue.gen_clues.g(),
-    miniclue.gen_clues.marks(),
-    miniclue.gen_clues.registers(),
-    miniclue.gen_clues.windows(),
-    miniclue.gen_clues.z(),
-  },
-})
 require('mason').setup()
 require'lspconfig'.rust_analyzer.setup({})
+require'lspconfig'.jsonnet_ls.setup()
 MiniIcons.tweak_lsp_kind()
 
 lsp.config('elixirls', {
   cmd = { '/usr/bin/elixir-ls' };
 })
 
-lsp.enable('elixirls', 'rust_analyzer')
+lsp.enable('elixirls', 'rust_analyzer', 'jsonnet_ls')
 
 map('n', '<leader>cc', ':colorscheme wildcharm<CR>')
 map('n', '<leader>d', vim.diagnostic.open_float, { noremap = true, silent = true })
