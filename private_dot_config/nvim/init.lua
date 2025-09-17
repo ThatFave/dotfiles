@@ -67,7 +67,7 @@ require'lspconfig'.jsonnet_ls.setup({})
 MiniIcons.tweak_lsp_kind()
 
 lsp.config('elixirls', {
-  cmd = { '/usr/bin/elixir-ls' };
+  cmd = { '/home/michael/distrobox/.local/share/nvim/mason/bin/elixir-ls' };
 })
 
 lsp.enable('elixirls', 'rust_analyzer', 'jsonnet_ls')
@@ -78,6 +78,7 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>')
 map('n', '<leader>f', vim.lsp.buf.format, { noremap = true, silent = true })
 map('n', '<leader>l', ':!tk lint %<CR>')
 map('n', '<leader>o', ':update<CR>:source<CR>')
+map('n', '<leader>pu', ':lua vim.pack.update()<CR>')
 map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map('n', '<leader>u', ':UndotreeToggle<CR>')
 map('n', '<leader>w', ':BufferClose<CR>')
