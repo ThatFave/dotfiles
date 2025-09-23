@@ -47,6 +47,7 @@ vim.pack.add({
   { src = 'https://github.com/neovim/nvim-lspconfig' },
   { src = 'https://github.com/mason-org/mason.nvim' },
   { src = 'https://github.com/mluders/comfy-line-numbers.nvim' },
+	{ src = 'https://github.com/folke/todo-comments.nvim' },
 })
 
 require('nvim-treesitter.configs').setup({
