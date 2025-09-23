@@ -47,7 +47,6 @@ vim.pack.add({
   { src = 'https://github.com/neovim/nvim-lspconfig' },
   { src = 'https://github.com/mason-org/mason.nvim' },
   { src = 'https://github.com/mluders/comfy-line-numbers.nvim' },
-	{ src = 'https://github.com/folke/todo-comments.nvim' },
 })
 
 require('nvim-treesitter.configs').setup({
@@ -65,7 +64,7 @@ require('mini.completion').setup()
 require('mini.icons').setup()
 require('mason').setup()
 require('comfy-line-numbers').setup()
-require('todo-comments').setup()
+require('todo-highlighter').setup()
 require'lspconfig'.rust_analyzer.setup({})
 require'lspconfig'.jsonnet_ls.setup({})
 MiniIcons.tweak_lsp_kind()
@@ -84,7 +83,6 @@ map('n', '<leader>l', ':!tk lint %<CR>')
 map('n', '<leader>o', ':update<CR>:source<CR>')
 map('n', '<leader>pu', ':lua vim.pack.update()<CR>')
 map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-map('n', '<leader>td', 'TodoQuickFix<CR>')
 map('n', '<leader>u', ':UndotreeToggle<CR>')
 map('n', '<leader>w', ':BufferClose<CR>')
 map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
