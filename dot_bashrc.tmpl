@@ -18,10 +18,14 @@ export ERL_AFLAGS="-name elixir@arch.wild-fahrenheit.ts.net -setcookie secret"
 {{ end }}
 
 eval "$(atuin init bash --disable-up-arrow)"
-eval "$(mise activate bash)"
 eval "$(jj util completion bash)"
 
 {{ if eq .chezmoi.fqdnHostname "desktop-michael" }}
+export SSH_AUTH_SOCK=/home/michael/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+eval "$(mise activate bash)"
+{{ end }}
+
+{{ if eq .chezmoi.fqdnHostname "laptop-michael" }}
 export SSH_AUTH_SOCK=/home/michael/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
 eval "$(mise activate bash)"
 {{ end }}
