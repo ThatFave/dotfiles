@@ -19,6 +19,7 @@ export ERL_AFLAGS="-name elixir@arch.wild-fahrenheit.ts.net -setcookie secret"
 
 eval "$(atuin init bash --disable-up-arrow)"
 eval "$(jj util completion bash)"
+eval "$(k3d completion bash)"
 
 {{ if eq .chezmoi.fqdnHostname "desktop-michael" }}
 export SSH_AUTH_SOCK=/home/michael/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
