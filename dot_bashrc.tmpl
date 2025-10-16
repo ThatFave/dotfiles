@@ -1,5 +1,5 @@
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-export PATH="$PATH:$HOME/.local/bin:$HOME/.atuin/bin:$HOME/.local/share/bob/nightly/bin:$HOME/.cargo/bin:/home/michael/.local/share/bob/nvim-bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.atuin/bin:$HOME/.local/share/bob/nightly/bin:/home/michael/.local/share/bob/nvim-bin"
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
@@ -10,8 +10,8 @@ export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export GOPATH="$XDG_DATA_HOME"/go
 export EDITOR=nvim
-export PATH="$PATH:$GOPATH/bin"
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export PATH="$PATH:$GOPATH/bin:$CARGO_HOME/bin"
 
 {{ if eq .chezmoi.fqdnHostname "arch.wild-fahrenheit.ts.net" }}
 export ERL_AFLAGS="-name elixir@arch.wild-fahrenheit.ts.net -setcookie secret"
