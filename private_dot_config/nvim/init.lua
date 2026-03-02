@@ -44,7 +44,7 @@ vim.pack.add({
   { src = 'https://github.com/mbbill/undotree' },
   { src = 'https://github.com/nvim-mini/mini.completion' },
   { src = 'https://github.com/nvim-mini/mini.icons' },
-  { src = 'https://github.com/neovim/nvim-lspconfig' },
+  -- { src = 'https://github.com/neovim/nvim-lspconfig' },
   { src = 'https://github.com/mason-org/mason.nvim' },
   { src = 'https://github.com/mluders/comfy-line-numbers.nvim' },
 })
@@ -64,12 +64,20 @@ require('mini.completion').setup()
 require('mini.icons').setup()
 require('mason').setup()
 require('comfy-line-numbers').setup()
-require'lspconfig'.rust_analyzer.setup({})
-require'lspconfig'.jsonnet_ls.setup({})
 MiniIcons.tweak_lsp_kind()
 
 lsp.config('elixirls', {
   cmd = { '/home/michael/distrobox/.local/share/nvim/mason/bin/elixir-ls' };
+})
+lsp.config('rust_analyzer', {
+  cmd = { 'rust-analyzer' },
+  filetypes = { 'rust' },
+  root_markers = { 'Cargo.toml', '.git' },
+})
+lsp.config('jsonnet_ls', {
+  cmd = { 'jsonnet-language-server', '--stdio' },
+  filetypes = { 'jsonnet', 'libsonnet' },
+  root_markers = { '.git' },
 })
 
 lsp.enable('elixirls', 'rust_analyzer', 'jsonnet_ls')
