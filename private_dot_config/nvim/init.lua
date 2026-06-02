@@ -49,7 +49,7 @@ vim.pack.add({
   { src = 'https://github.com/mluders/comfy-line-numbers.nvim' },
 })
 
-require('nvim-treesitter.configs').setup()
+require('nvim-treesitter').setup()
 require('nvim-tree').setup({
   actions = { open_file = { quit_on_open = true } },
   disable_netrw = true,
