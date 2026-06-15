@@ -12,10 +12,18 @@ export GOPATH="$XDG_DATA_HOME"/go
 export EDITOR=vim
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export PATH="$PATH:$GOPATH/bin:$CARGO_HOME/bin"
+export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export XCURSOR_PATH=/usr/share/icons:$XDG_DATA_HOME/icons
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 alias vi=vim
 alias gish='ssh -p 2222 10.20.0.202'
 alias clear="clear && printf '\033c'"
+
+if command -v wget >/dev/null 2>&1; then
+	alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+fi
 
 if command -v clippy >/dev/null 2>&1; then
 	alias clippy='cargo clippy --fix --allow-dirty -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
