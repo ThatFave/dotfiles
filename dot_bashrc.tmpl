@@ -13,11 +13,22 @@ export EDITOR=vim
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export PATH="$PATH:$GOPATH/bin:$CARGO_HOME/bin"
 
-eval "$(atuin init bash --disable-up-arrow)"
-eval "$(mise activate bash)"
-
 alias vi=vim
 alias gish='ssh -p 2222 10.20.0.202'
+alias clear="clear && printf '\033c'"
+
+if command -v clippy >/dev/null 2>&1; then
+	alias clippy='cargo clippy --fix --allow-dirty -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
+fi
+
+if command -v atuin >/dev/null 2>&1; then
+	eval "$(atuin init bash --disable-up-arrow)"
+fi
+
+if command -v mise >/dev/null 2>&1; then
+	eval "$(mise activate bash)"
+fi
+
 
 if command -v eza >/dev/null 2>&1; then
 	alias ll='eza -abghHliS@Um --git --octal-permissions'
@@ -35,5 +46,3 @@ if command -v rg >/dev/null 2>&1; then
 	alias grep='rg'
 fi
 
-alias clippy='cargo clippy --fix --allow-dirty -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
-alias clear="clear && printf '\033c'"
